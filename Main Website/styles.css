@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white; /* Makes all text white */
+}
+
+body {
+  background-color: black; /* Sets background to black */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Styles the logo (GIF) */
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  z-index: 101;
+}
+
+/* Moves navigation to the right side */
+.navigation {
+  margin-left: auto; /* Pushes the navigation to the right */
+}
+
+.navigation a {
+  font-size: 1.1em;
+  color: #fff; /* Ensures navigation links are visible */
+  text-decoration: none;
+  margin-left: 40px; /* Adds spacing between links */
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navigation a:hover {
+  color: rgb(155, 240, 6);
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 100px;
+}
+
+.content {
+  max-width: 500px;
+}
+
+.content h2 {
+  font-size: 3em;
+}
+
+.content h2 span {
+  color: #7d2ae8;
+}
+.right-image {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-image img {
+  width: 100%; /* Makes the image responsive */
+  max-width: 400px; /* Adjust max size as needed */
+  height: auto;
+  border-radius: 10px; /* Optional: Adds rounded corners */
+}
+/* Pink text modifications */
+.content h4,
+.btn-group a:first-child,
+.btn-group a:nth-child(2) {
+  color: rgb(255, 255, 255);
+}
+
+.content p {
+  padding: 10px 0 40px 0;
+}
+
+.btn-group a {
+  border: 2px solid blue;
+  text-decoration: none;
+  padding: 10px 40px;
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-group a:hover {
+  color: white;
+  background: rgb(43, 17, 188);
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 50px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background: #7d2ae8;
+  border-radius: 50%;
+  margin-right: 22px;
+  text-align: center;
+  line-height: 35px;
+  border: 1px solid #fff;
+  outline: 2px solid #7d2ae8;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+}
+
+.social-icons a i {
+  color: #fff;
+}
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOutPreloader 7s forwards;
+  }
+  
+  .preloader-logo {
+    width: 500px; /* Adjust logo size */
+    height: auto;
+  }
+  
+  /* Main Content - Initially Hidden */
+  #main-content {
+    opacity: 0;
+    animation: fadeInMain 3s forwards 7s; /* Fades in from 7s to 10s */
+  }
+  
+  /* Preloader fades out from 5s to 7s */
+  @keyframes fadeOutPreloader {
+    0% { opacity: 1; }
+    71.4% { opacity: 1; } /* Logo fully visible till 5s */
+    100% { opacity: 0; visibility: hidden; } /* Fades out from 5s to 7s */
+  }
+  
+  /* Main content fades in from 7s to 10s */
+  @keyframes fadeInMain {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  /* Typing Animation */
+/* Typing Animation */
+.typing-container {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white; /* Cursor effect */
+  font-size: 3em;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+  width: fit-content; /* Ensures full text is shown */
+  max-width: 0; /* Start with no width */
+}
+
+/* Typing Effect */
+@keyframes typing {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+
+/* Blinking Cursor Effect */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Moving Background Animation */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("code\ \(2\).png") repeat; /* Update with your actual image file */
+  background-size: 300px; /* Adjust size to make the image smaller */
+  opacity: 0.2; /* Adjust transparency */
+  animation: moveBg 20s linear infinite;
+  z-index: -1;
+}
+
+/* Background Animation Keyframes */
+@keyframes moveBg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+/* Footer Section */
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  text-shadow: 0 0 10px white, 0 0 20px white; /* Glowing effect */
+}
+
